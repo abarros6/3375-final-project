@@ -77,6 +77,19 @@ int HandlePassword(void)
 	return 0;
 }
 
+int adcControl(void)
+{
+
+	if (ReadSwitches() == 0x0) // carriage position in terms of floor
+	{
+		flag = 0;
+	}
+	else if (ReadSwitches() == 0b1) // weight sensing attribute
+	{
+		flag = 1;
+	}
+}
+
 void SoundAlarm()
 {
 	/*used for audio record/playback*/
@@ -318,6 +331,7 @@ int main(void)
 			EmergencyState();
 			break;
 		}
+		adcControl();
 		DisplayResults();
 	}
 }
