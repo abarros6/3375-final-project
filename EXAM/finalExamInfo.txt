@@ -1,0 +1,13 @@
+//////////////FORMAT///////////////
+
+The final examination will be a synchronous, remote, open-book test. You must submit your answers over OWL, so you need to be prepared to:
+
+Have reliable access to OWL during the test period, and
+Have some method of providing your answers to OWL.
+The final exam will start at 14:00 on Thursday, April 14th 2022. The test is designed to be the equivalent of a 3-hour in-person test. To account for possible technical difficulties, you will be given four hours to complete the test.
+
+The exam papers will be distributed in your Drop Box, just like the midterm.
+
+Your test answers should be entered into the appropriate fields in a Tests & Quizzes assessment on OWL. As with the midterm, the code-based questions will have a textbook so you can add comments, explanations, etc. if you are unsure about your code.
+
+If you have hand-written rough work - perhaps you can't write code but you can draw a flow chart - you can upload that to your Drop Box. Please include a note in your submission on Tests & Quizzes directing us to look at your rough work. It isn't necessary to upload any rough work to your Drop Box: there is no need to draw any pictures or make any complicated mathematical calculations on this exam. However this is an option if you communicate better in pictures than in words.
