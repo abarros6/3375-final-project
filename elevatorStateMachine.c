@@ -91,7 +91,6 @@ void SoundAlarm()
 	int left_buffer[BUF_SIZE];
 	int right_buffer[BUF_SIZE]; /*read and echo audio data*/
 
-	*(led_ptr) = 0b1000000000;					  // turn on LEDR_9
 	fifospace = *(audio_ptr + 1);				  // read the audio port fifospace register
 	if ((fifospace & 0x00FF0000) > BUF_THRESHOLD) // check WSRC
 	{
@@ -281,6 +280,10 @@ int EmergencyState()
 {
 	LedOn(0b100);
 	SoundAlarm();
+	if (ReadSwitches() != 0b100)
+	{
+		EpsilonTransition();
+	}
 }
 ////////////////END OF STATE FUNCTIONS
 
