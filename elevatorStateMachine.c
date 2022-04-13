@@ -62,7 +62,7 @@ int HandlePassword(void)
 {
 	// this if statement controls the password values
 	// in this case buttons 0,2,3 need to be pressed
-	if (ReadButton(0) && ReadButton(2) && ReadButton(3))
+	if (ReadButton(3))
 	{
 		return 1;
 	}
@@ -73,11 +73,11 @@ int HandlePassword(void)
 int adcControl(void)
 {
 
-	if (ReadSwitches() == 0b10) // carriage position in terms of floor
+	if (ReadButton(0) && !ReadButton(1)) // carriage position in terms of floor
 	{
 		flag = 0;
 	}
-	else if (ReadSwitches() == 0b1) // weight sensing attribute
+	else if (ReadButton(1) && !ReadButton(0)) // weight sensing attribute
 	{
 		flag = 1;
 	}
@@ -273,6 +273,10 @@ int NextFloorState()
 int PasscodeEnteredState()
 {
 	LedOn(0b10); // turn on led 1 to indicate password entered correctly
+	if (ReadSwitches() == 0)
+	{
+		EpsilonTransition();
+	}
 	HandleTransition();
 }
 
@@ -325,10 +329,8 @@ int main(void)
 			EmergencyState();
 			break;
 		}
-		/*
 		adcControl();	  // update the adc
 		DisplayResults(); // display the results through the GPIO pins
-		*/
 	}
 }
 //////////////////END OF MAIN PROGRAM
