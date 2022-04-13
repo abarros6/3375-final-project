@@ -47,18 +47,11 @@ int LedOn(int light)
 	(*(led_ptr)) = light;
 }
 
-int ClearLeds(void)
-{
-	(*(led_ptr)) = 0;
-}
-
-// Reads switches
 int ReadSwitches(void)
 {
 	return (*(sw_ptr));
 }
 
-// Reads buttons
 int ReadButton(int btn)
 {
 	// Returns 1 if the given button is pressed, 0 otherwise due to & operator
@@ -80,7 +73,7 @@ int HandlePassword(void)
 int adcControl(void)
 {
 
-	if (ReadSwitches() == 0x0) // carriage position in terms of floor
+	if (ReadSwitches() == 0b10) // carriage position in terms of floor
 	{
 		flag = 0;
 	}
@@ -288,10 +281,6 @@ int EmergencyState()
 {
 	LedOn(0b100);
 	SoundAlarm();
-	if (ReadSwitches() != 0b100)
-	{
-		EpsilonTransition();
-	}
 }
 ////////////////END OF STATE FUNCTIONS
 
@@ -303,6 +292,8 @@ int main(void)
 	// q1-7 = 1
 	// q* = 2
 	// qE = 3
+
+	/////////init the gpio and adc values
 	*(adc_ptr) = 0b1;
 	*(adc_ptr + 1) = 0b1;
 	*(gpio_ptr + 1) = 0b1111111111;
@@ -331,8 +322,10 @@ int main(void)
 			EmergencyState();
 			break;
 		}
-		adcControl();
-		DisplayResults();
+		/*
+		adcControl();	  // update the adc
+		DisplayResults(); // display the results through the GPIO pins
+		*/
 	}
 }
 //////////////////END OF MAIN PROGRAM
