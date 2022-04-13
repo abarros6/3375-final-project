@@ -1,4 +1,4 @@
-//////////////FORMAT///////////////
+//////////////GENERAL INFO///////////////
 
 The final examination will be a synchronous, remote, open-book test. You must submit your answers over OWL, so you need to be prepared to:
 
@@ -11,3 +11,19 @@ The exam papers will be distributed in your Drop Box, just like the midterm.
 Your test answers should be entered into the appropriate fields in a Tests & Quizzes assessment on OWL. As with the midterm, the code-based questions will have a textbook so you can add comments, explanations, etc. if you are unsure about your code.
 
 If you have hand-written rough work - perhaps you can't write code but you can draw a flow chart - you can upload that to your Drop Box. Please include a note in your submission on Tests & Quizzes directing us to look at your rough work. It isn't necessary to upload any rough work to your Drop Box: there is no need to draw any pictures or make any complicated mathematical calculations on this exam. However this is an option if you communicate better in pictures than in words.
+
+//////////////OVERVIEW-FORMAT///////////////
+
+The exam will focus on material studied since the midterm: GPIO ports, timers, ADC, communications, and interrupts. The final exam may, however, include content from before the midterm, so you should be familiar with ARMv7-type Assembly mnemonics, protocol for writing subroutines, and with memory mapping.
+
+The final exam consists of several questions of varying length, grouped into 4 parts.
+
+Part I consists of eight (8) conceptual multiple choice questions. Very similar to part I on the midterm, although the content of this questions spans the entire course. As noted on the exam paper, you should choose the best option given the content of this course. One fun thing I enjoy doing is posing a question like: "What is the purpose of a status register on a peripheral?", and one of the options might be: "A status register, flag register, or condition code register (CCR) is a collection of status flag bits for a processor." This is the first line of the Wikipedia page that pops up if you Google "status register", and is given as a trap for students who are trying to use Google instead of their brain.
+
+Part II consists of eight (8) short questions. Things like providing the appropriate bit mask, timer interval, etc. Look at the homework quizzes for examples of the kind of single-line questions we might ask.
+
+Part III consists of three (3) questions on Assembly language. This includes analyzing a given piece of code, and writing some short code yourself.
+
+Part IV consists of three (3) questions on interfacing with peripherals. You will need to write code for all of these questions, it can be in Assembly or C. Look at parts II and III on the practice final. One question is similar to the design question on part III of the practice final, but a bit simpler: the problem is more clearly stated, so it should be pretty clear how the problem must be implemented. These questions use model hardware, similar (but different) to that presented on the practice final. You are not required to use interrupts for any of these questions, but you can if you want to.
+
+Please keep track of time when completing the exam, and avoid leaving any high-value question (i.e. a coding question) blank. Even if you can't write the code, at least give a quick description of what you think the code should do.
